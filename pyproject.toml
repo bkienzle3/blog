@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "blog"
+version = "0.1.0"
+description = "Simple blog for my personal website"
+authors = ["bkienzle3 <brian@bkienzle.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.2.10"
+python-decouple = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

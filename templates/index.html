@@ -2,30 +2,27 @@
       
 {% block content %}
 
-    <header>
-        <nav>
-            <ul>
-              <li><strong>My Blog</strong></li>
-            </ul>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Archive</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-    </header>
     
 
     {% for post in post_list %}
-        <h4>{{ post.title }}</h4>
-        <p><small>{{ post.author }} | {{ post.created_on}} </small></p>
+        <div class='card my-4'>
+          <div class='card-header'>
+              <div class='container d-flex flex-row'>
+                {{ post.title }}
+              </div>
+              <div class='container d-flex flex-row-reverse'>
+                <small>by {{ post.author }} on {{ post.created_on}}</small>
+              </div>
+          </div>
+          <div class='card-body'>
 
-        <p>{{post.content|slice:":200" }}</p>
-        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+            <p>{{post.content|slice:":200" }}</p>
+            
+            <div class='d-flex flex-row-reverse'>
+              <a href="{% url 'post_detail' post.slug  %}" class='btn btn-secondary'>Read More</a>
+            </div>
+          </div>
+        </div>
     {% endfor %}
-    <!-- Sidebar -->
-    {% block sidebar %}
-    {% include 'sidebar.html' %}
-    {% endblock sidebar %}
 
 {%endblock%}

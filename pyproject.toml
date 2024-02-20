@@ -2,7 +2,7 @@
 name = "blog"
 version = "0.1.0"
 description = "Simple blog for my personal website"
-authors = ["bkienzle3 <brian@bkienzle.com>"]
+authors = ["bkienzle3"]
 license = "MIT"
 readme = "README.md"
 

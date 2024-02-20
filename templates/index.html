@@ -2,27 +2,34 @@
       
 {% block content %}
 
-    
+{% load static %}
 
     {% for post in post_list %}
-        <div class='card my-4'>
-          <div class='card-header'>
-              <div class='container d-flex flex-row'>
-                {{ post.title }}
-              </div>
-              <div class='container d-flex flex-row-reverse'>
-                <small>by {{ post.author }} on {{ post.created_on}}</small>
-              </div>
+      <div class="card my-4 mb-3 translate-middle-x top-0 start-50" style="max-width: 900px;">
+        <div class="row g-0">
+          <div class="col-md-4 text-center mx-auto">
+            <img src="{% static 'temp.jpg' %}" class="img-thumbnail mx-auto rounded-start object-fit-scale" alt="Temporary image">
           </div>
-          <div class='card-body'>
+          <div class="col-md-8">
+            <div class="card-body w-auto">
+              <div class='row'>
+                <div class='card-title h4'>
+                  <a href="{% url 'post_detail' post.slug  %}" class='link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>{{ post.title }}</a>
+                </div>
+                <div class='card-text'>
+                  <p><small class='text-body-secondary'>{{ post.created_on}}</small></p>
+                </div>
+              </div>
 
-            <p>{{post.content|slice:":200" }}</p>
-            
-            <div class='d-flex flex-row-reverse'>
-              <a href="{% url 'post_detail' post.slug  %}" class='btn btn-secondary'>Read More</a>
+              <p class="card-text">{{post.content|slice:":320" }}</p>
+              <div class='d-flex flex-row-reverse'>
+                <a href="{% url 'post_detail' post.slug  %}" class='btn btn-secondary'>Read More</a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
     {% endfor %}
 
 {%endblock%}

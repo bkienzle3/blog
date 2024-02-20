@@ -1,12 +1,16 @@
+{% load static %}
 <nav class='navbar navbar-expand-sm bg-body-secondary mb-4' role='navigation' aria-label='main-navigation'>
   <div class='container nav ms-2'>
     <a class="navbar-brand" href="/">Brian Kienzle</a>
   </div>
   <div class='container nav d-flex flex-row-reverse nav ms-2'>
-    <div class="navbar-nav">
+    <div class="navbar-nav align-middle">
       <a class="nav-link" href="#">About</a>
       <a class="nav-link" href="#">Archive</a>
       <a class="nav-link" href="#">Contact</a>
+      <a class='nav-link d-flex align-items-center' href='#'>
+        <img class='object-fit-scale' width=22 src={% static 'github-mark-white.png' %}>
+      </a>
     </div>
   </div>
 

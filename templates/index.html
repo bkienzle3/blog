@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-      
 {% block content %}
-
 {% load static %}
-
     {% for post in post_list %}
       <div class="card my-4 mb-3 translate-middle-x top-0 start-50" style="max-width: 900px;">
         <div class="row g-0">
@@ -17,11 +14,11 @@
                   <a href="{% url 'post_detail' post.slug  %}" class='link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>{{ post.title }}</a>
                 </div>
                 <div class='card-text'>
-                  <p><small class='text-body-secondary'>{{ post.created_on}}</small></p>
+                  <p><small class='text-body-secondary'>{{ post.created_on }}</small></p>
                 </div>
               </div>
 
-              <p class="card-text">{{post.content|slice:":320" }}</p>
+              <p class="card-text">{{ post.content|slice:":320" }}</p>
               <div class='d-flex flex-row-reverse'>
                 <a href="{% url 'post_detail' post.slug  %}" class='btn btn-secondary'>Read More</a>
               </div>
@@ -31,5 +28,4 @@
       </div>
 
     {% endfor %}
-
 {%endblock%}
